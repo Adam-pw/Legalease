@@ -1,4 +1,5 @@
 import Layout from "@/components/layout";
+import Link from "next/link";
 import React from "react";
 
 const Index = () => {
@@ -24,9 +25,11 @@ const Index = () => {
                 start creating your own!
               </p>
               <div className="mt-[36px] flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
-                <button className="text-black linear rounded-md bg-white px-4 py-2 text-center text-base font-medium transition duration-200 hover:!bg-white/80 active:!bg-white/70">
-                  Try it Now
-                </button>
+                <Link href="/form">
+                  <button className="text-black linear rounded-md bg-white px-4 py-2 text-center text-base font-medium transition duration-200 hover:!bg-white/80 active:!bg-white/70">
+                    Try it Now
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
