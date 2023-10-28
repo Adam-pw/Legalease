@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
         <header className="container sticky top-0 z-40 w-full mx-auto">
           <div className="border-b border-b-slate-200 py-4 w-full">
             <nav className="mx-4 px-6 flex items-center">
-              <div className="text-xl font-semibold">Home</div>
+              <div className="text-xl font-semibold">LegalEase</div>
             </nav>
           </div>
         </header>
