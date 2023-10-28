@@ -1,172 +1,300 @@
 import Layout from "@/components/layout";
-import {
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  Input,
-  Textarea,
-} from "@chakra-ui/react";
-import { Select } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { useState } from "react";
-import Link from "next/link";
+import React from "react";
 
-export default function Home() {
-  const [input, setInput] = useState<any>({
-    name: "",
-    email: "",
-    age: null,
-    category: null,
-    summary: "",
-    description: "",
-    criminalHistory: "No Pervious History",
-  });
-
-  const setLocalStorageItem = (key: any, value: any) => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  };
-
-  const linkMap: any = {
-    "Related to Income Tax": "/incomeTax",
-    "Related to Labour Law": "/labourLaw",
-    "Related to Business Law": "/businessLaw",
-  };
-
+const Index = () => {
   return (
-    <>
-      <Layout>
-        <div className="max-w-screen-xl mx-auto m-4">
-          <div className="text-xl md:text-4xl py-8 text-center">
-            👨‍💻 Enter your case details below :
-          </div>
-          <div className="md:w-[30vw] mx-auto border border-gray-200 shadow-lg m-4 rounded-lg p-8">
-            <FormControl className="flex flex-col gap-6">
-              <div className="">
-                <FormLabel>Name</FormLabel>
-                <Input
-                  type="email"
-                  value={input.name}
-                  placeholder="Enter your name"
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      name: event.target.value,
-                    }));
-                  }}
-                />
+    <Layout>
+      <div className="max-w-screen-xl md:mx-auto mx-4">
+        <div className="flex md:w-[70vw] flex-col justify-center items-center my-12">
+          <div
+            className="flex w-full flex-col items-center rounded-md bg-cover h-[50vh]"
+            style={{
+              backgroundImage:
+                "url(https://i0.wp.com/compass.rauias.com/wp-content/uploads/2023/08/indian-parliament-64eeedd4361f4.webp)",
+              opacity: "100%",
+              objectFit: "cover",
+            }}
+          >
+            <div className="w-full bg-black/60 px-[30px] py-[30px] md:px-[64px] md:py-[56px] h-[50vh] flex flex-col justify-center">
+              <h4 className="mb-[14px] max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
+                Discover, collect, and sell extraordinary NFTs
+              </h4>
+              <p className="mb-[40px] max-w-full text-base font-medium text-[#E3DAFF] md:w-[64%] lg:w-[40%] xl:w-[72%] 2xl:w-[60%] 3xl:w-[45%]">
+                Enter in this creative world. Discover now the latest NFTs or
+                start creating your own!
+              </p>
+              <div className="mt-[36px] flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
+                <button className="text-black linear rounded-md bg-white px-4 py-2 text-center text-base font-medium transition duration-200 hover:!bg-white/80 active:!bg-white/70">
+                  Try it Now
+                </button>
               </div>
-              <div className="">
-                <FormLabel>Email</FormLabel>
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={input.email}
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      email: event.target.value,
-                    }));
-                  }}
-                />
-              </div>
-              <div className="">
-                <FormLabel>Age</FormLabel>
-                <Input
-                  type="number"
-                  placeholder="Enter your age"
-                  value={input.age}
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      age: event.target.value,
-                    }));
-                  }}
-                />
-              </div>
-              <div className="">
-                <FormLabel>Select Your Case Category:</FormLabel>
-                <Select
-                  placeholder="Select option"
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      category: event.target.value,
-                    }));
-                  }}
-                >
-                  <option value="Related to Income Tax">
-                    Related to Income Tax
-                  </option>
-                  <option value="Related to Business Law">
-                    Related to Business Law
-                  </option>
-                  <option value="Related to Labour Law">
-                    Related to Labour Law
-                  </option>
-                </Select>
-              </div>
-              <hr></hr>
-              <div className="text-lg">Describe your case to us :</div>
-              <div className="">
-                <FormLabel>Summary of your problem :</FormLabel>
-                <Textarea
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      summary: event.target.value,
-                    }));
-                  }}
-                />
-                <FormHelperText>
-                  {"Explain your problem in brief"}
-                </FormHelperText>
-              </div>
-              <div className="">
-                <FormLabel>Description :</FormLabel>
-                <Textarea
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      description: event.target.value,
-                    }));
-                  }}
-                  placeholder={`How it started ? \nHow it is affecting you ? \nWhat steps you have taken till now ?`}
-                />
-                <FormHelperText>
-                  {"Provide the description of how your case started"}
-                </FormHelperText>
-              </div>
-              <div className="">
-                <FormLabel>Criminal History (Optional) :</FormLabel>
-                <Textarea
-                  onChange={(event) => {
-                    setInput((prev: any) => ({
-                      ...prev,
-                      criminalHistory: event.target.value,
-                    }));
-                  }}
-                />
-                <FormHelperText>
-                  {"Criminal History if you have any (Optional)"}
-                </FormHelperText>
-              </div>
-              <Link href={linkMap[input.category] ?? ""}>
-                <Button
-                  colorScheme="blue"
-                  onClick={() => {
-                    console.log(input);
-                    setLocalStorageItem("input", input);
-                  }}
-                >
-                  Submit your Details
-                </Button>
-              </Link>
-            </FormControl>
+            </div>
           </div>
         </div>
-      </Layout>
-    </>
+      </div>
+
+      <div className="pt-16 bg-gray-50 overflow-hidden">
+        <div className="container m-auto px-6 text-gray-500 md:px-12">
+          <div>
+            <span className="text-gray-600 text-lg font-semibold">
+              Main features
+            </span>
+            <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
+              A technology-first approach to payments{" "}
+              <br className="lg:block" hidden /> and finance
+            </h2>
+          </div>
+          <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png"
+                  className="w-10"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
+
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    First feature
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    &RightArrow;
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png"
+                  className="w-10"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
+
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Second feature
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    &RightArrow;
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
+                  className="w-10"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
+
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Third feature
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    &RightArrow;
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="relative group bg-gray-100 transition hover:z-[1] hover:shadow-2xl lg:hidden xl:block">
+              <div className="relative p-8 space-y-8 border-dashed rounded-lg transition duration-300 group-hover:bg-white group-hover:border group-hover:scale-90">
+                <img
+                  src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/metal.png"
+                  className="w-10"
+                  width="512"
+                  height="512"
+                  alt="burger illustration"
+                />
+
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    More features
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    &RightArrow;
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer className="bg-[#c2edf9] font-sans mt-32">
+          <div className="container px-6 py-12 mx-auto">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+              <div className="sm:col-span-2">
+                <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl">
+                  Subscribe our newsletter to get an update.
+                </h1>
+
+                <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+                  <input
+                    id="email"
+                    type="text"
+                    className="px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                    placeholder="Email Address"
+                  />
+
+                  <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-semibold text-gray-800">Quick Link</p>
+
+                <div className="flex flex-col items-start mt-5 space-y-2">
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Home
+                  </p>
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Who We Are
+                  </p>
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Our Philosophy
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-semibold text-gray-800">Industries</p>
+
+                <div className="flex flex-col items-start mt-5 space-y-2">
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Retail & E-Commerce
+                  </p>
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Information Technology
+                  </p>
+                  <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                    Finance & Insurance
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700 h-2" />
+
+            <div className="sm:flex sm:items-center sm:justify-between">
+              <div className="flex flex-1 gap-4 hover:cursor-pointer">
+                <img
+                  src="https://www.svgrepo.com/show/303139/google-play-badge-logo.svg"
+                  width="130"
+                  height="110"
+                  alt=""
+                />
+                <img
+                  src="https://www.svgrepo.com/show/303128/download-on-the-app-store-apple-logo.svg"
+                  width="130"
+                  height="110"
+                  alt=""
+                />
+              </div>
+
+              <div className="flex gap-4 hover:cursor-pointer">
+                <img
+                  src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
+                  width="30"
+                  height="30"
+                  alt="fb"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
+                  width="30"
+                  height="30"
+                  alt="tw"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
+                  width="30"
+                  height="30"
+                  alt="inst"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/94698/github.svg"
+                  className=""
+                  width="30"
+                  height="30"
+                  alt="gt"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/22037/path.svg"
+                  width="30"
+                  height="30"
+                  alt="pn"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/28145/linkedin.svg"
+                  width="30"
+                  height="30"
+                  alt="in"
+                />
+                <img
+                  src="https://www.svgrepo.com/show/22048/dribbble.svg"
+                  className=""
+                  width="30"
+                  height="30"
+                  alt="db"
+                />
+              </div>
+            </div>
+            <p className="font-sans p-8 text-start md:text-center md:text-lg md:p-4">
+              © 2023 You Company Inc. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </Layout>
   );
-}
+};
+
+export default Index;

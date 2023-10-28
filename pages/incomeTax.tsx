@@ -34,7 +34,7 @@ export default function IncomeTax() {
   }>({
     messages: [
       {
-        message: `Hey !! I can provide any information regarding your case feel free to ask me`,
+        message: `Hey !! feel free to ask me anything`,
         type: "apiMessage",
       },
     ],
@@ -150,8 +150,8 @@ export default function IncomeTax() {
   return (
     <Layout>
       <div className="mx-auto flex flex-col gap-4">
-        <h1 className="text-2xl font-bold leading-[1.1] text-center tracking-wide mt-6">
-          <span className="text-[#280036]">Chat With </span>
+        <h1 className="text-2xl font-bold flex flex-col md:flex-row items-center justify-center w-full gap-2 md:gap-0 leading-[1.1] tracking-wide mt-6">
+          <span className="text-[#280036] text-center">Chat With </span>
           <span className="text-[#ff0041]">{`${appName}`}</span>
         </h1>
         <main className={`${styles.main}` + " mt-2"}>
@@ -168,7 +168,7 @@ export default function IncomeTax() {
                       alt="AI"
                       width="40"
                       height="40"
-                      className={styles.boticon}
+                      className={`${styles.boticon} h-8 w-8 md:h-10 md:w-10`}
                       priority
                     />
                   );
