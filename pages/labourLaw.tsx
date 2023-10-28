@@ -19,7 +19,7 @@ export type Message = {
   sourceDocs?: Document[];
 };
 
-const appName = `🔨 LegalEase (Labour Law AI)`;
+const appName = `⚖️ LegalEase (Labour Law AI)`;
 
 export default function IncomeTax() {
   const [query, setQuery] = useState<string>("");

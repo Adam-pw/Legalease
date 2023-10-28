@@ -20,7 +20,7 @@ export type Message = {
   sourceDocs?: Document[];
 };
 
-const appName = `🔨 LegalEase (Business Law AI)`;
+const appName = `⚖️ LegalEase (Business Law AI)`;
 
 export default function BusinessLaw() {
   const [query, setQuery] = useState<string>("");

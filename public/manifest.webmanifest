@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "description": "Full filling all your Legal Needs",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "LegalEase",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "LegalEase",
+  "start_url": "/",
+  "theme_color": "#001f58",
+  "categories": ["entertainment", "productivity"],
+  "screenshots": [],
+  "shortcuts": []
+}
