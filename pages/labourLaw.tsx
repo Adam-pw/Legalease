@@ -5,7 +5,6 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import LoadingDots from "@/components/ui/LoadingDots";
 import { Document } from "langchain/document";
-
 import {
   Accordion,
   AccordionContent,
@@ -20,7 +19,7 @@ export type Message = {
   sourceDocs?: Document[];
 };
 
-const appName = `LegalEase (Labour Law AI)`;
+const appName = `🔨 LegalEase (Labour Law AI)`;
 
 export default function IncomeTax() {
   const [query, setQuery] = useState<string>("");
@@ -86,7 +85,7 @@ export default function IncomeTax() {
         body: JSON.stringify({
           question,
           history,
-          nameSpace: "plm",
+          nameSpace: "LabourLaw",
           temperature: "0.4",
           basePrompt: `Always answer in english`,
         }),
@@ -222,6 +221,16 @@ export default function IncomeTax() {
           <div className={styles.center}>
             <div className={styles.cloudform}>
               <form onSubmit={handleSubmit} className="flex">
+                {/* <Editor
+                  apiKey="fh5cc648hfjct1ywqu671g53k2qwl09jbczln4x9zxw0ibit"
+                  init={{
+                    selector: 'textarea',  // change this value according to your HTML
+                    plugins: 'a_tinymce_plugin',
+                    a_plugin_option: true,
+                    a_configuration_option: 400
+                  }};
+                  onChange={(e) => setQuery(e.target.value)}
+                /> */}
                 <textarea
                   disabled={loading}
                   onKeyDown={handleEnter}

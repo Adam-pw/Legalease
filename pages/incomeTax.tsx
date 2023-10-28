@@ -20,7 +20,7 @@ export type Message = {
   sourceDocs?: Document[];
 };
 
-const appName = `LegalEase (Income Tax AI)`;
+const appName = `🔨 LegalEase (Income Tax AI)`;
 
 export default function IncomeTax() {
   const [query, setQuery] = useState<string>("");
@@ -86,16 +86,16 @@ export default function IncomeTax() {
         body: JSON.stringify({
           question,
           history,
-          nameSpace: "plm",
+          nameSpace: "IncomeTax",
           temperature: "0.4",
-          basePrompt: `Always answer in english`,
+          basePrompt: `Your name is legalEase, you are a legal expert on Income tax laws. The user seeks legal advice from you. The name of the user is ${data.name}, the age is ${data.age} and e-mail address is ${data.email}. The user might have a criminal record that is ${data.criminalHistory} so keep that in consideration. The user has provided you with a short description or summary is the situation, which is ${data.summary}. The user’s problem is ${data.description}. It mentions how the problem started; it also mentions how it is affecting the life of the user. Understand the situation of the user in a humane way. The user might have taken some steps to remedy the problem, take those steps into consideration too.`,
         }),
       });
-      const data = await response.json();
-      console.log("data", data);
+      const ResponseData = await response.json();
+      console.log("data", ResponseData);
 
-      if (data.error) {
-        setError(data.error);
+      if (ResponseData.error) {
+        setError(ResponseData.error);
       } else {
         setMessageState((state: any) => ({
           ...state,
@@ -103,11 +103,11 @@ export default function IncomeTax() {
             ...state.messages,
             {
               type: "apiMessage",
-              message: data.text,
-              sourceDocs: data.sourceDocuments,
+              message: ResponseData.text,
+              sourceDocs: ResponseData.sourceDocuments,
             },
           ],
-          history: [...state.history, [question, data.text]],
+          history: [...state.history, [question, ResponseData.text]],
         }));
       }
       console.log("messageState", messageState);
@@ -131,6 +131,21 @@ export default function IncomeTax() {
       e.preventDefault();
     }
   };
+
+  const getLocalStorageItem = (key: any) => {
+    if (typeof window !== "undefined") {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    }
+    return null;
+  };
+
+  const [data, setData] = useState<any>();
+
+  useEffect(() => {
+    const response = getLocalStorageItem("input");
+    setData(response);
+  }, []);
 
   return (
     <Layout>

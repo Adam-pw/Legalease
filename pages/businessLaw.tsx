@@ -20,7 +20,7 @@ export type Message = {
   sourceDocs?: Document[];
 };
 
-const appName = `LegalEase (Business Law AI)`;
+const appName = `🔨 LegalEase (Business Law AI)`;
 
 export default function BusinessLaw() {
   const [query, setQuery] = useState<string>("");
@@ -86,7 +86,7 @@ export default function BusinessLaw() {
         body: JSON.stringify({
           question,
           history,
-          nameSpace: "plm",
+          nameSpace: "businessLaw",
           temperature: 0.4,
           basePrompt: `Always answer in english`,
         }),
