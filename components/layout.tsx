@@ -12,7 +12,9 @@ export default function Layout({ children }: LayoutProps) {
           <div className="border-b border-b-slate-200 py-4 w-full">
             <nav className="mx-4 px-6 flex items-center">
               <Link href="/">
-                <div className="text-xl font-semibold">⚖️ LegalEase</div>
+                <div className="text-xl font-semibold">
+                  <Image src="/logo.png" alt="" width={120} height={100} />
+                </div>
               </Link>
             </nav>
           </div>
