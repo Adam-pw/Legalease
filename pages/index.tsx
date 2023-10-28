@@ -18,11 +18,12 @@ const Index = () => {
           >
             <div className="w-full bg-black/60 px-[30px] py-[30px] md:px-[64px] md:py-[56px] h-[50vh] flex flex-col justify-center">
               <h4 className="mb-[14px] max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
-                Discover, collect, and sell extraordinary NFTs
+                LegalEase - Simplifying Legal Documentation
               </h4>
               <p className="mb-[40px] max-w-full text-base font-medium text-[#E3DAFF] md:w-[64%] lg:w-[40%] xl:w-[72%] 2xl:w-[60%] 3xl:w-[45%]">
-                Enter in this creative world. Discover now the latest NFTs or
-                start creating your own!
+                LegalEase is here to make legal paperwork breeze for individuals
+                and small business. No legal jargon, no confusion. Just simple
+                step by step process to create the document you need.
               </p>
               <div className="mt-[36px] flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
                 <Link href="/form">
@@ -35,7 +36,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
       <div className="pt-16 bg-gray-50 overflow-hidden">
         <div className="container m-auto px-6 text-gray-500 md:px-12">
           <div>
@@ -43,7 +43,7 @@ const Index = () => {
               Main features
             </span>
             <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
-              A technology-first approach to payments{" "}
+              A technology-first approach to Laws{" "}
               <br className="lg:block" hidden /> and finance
             </h2>
           </div>
@@ -60,11 +60,11 @@ const Index = () => {
 
                 <div className="space-y-2">
                   <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    First feature
+                    User Friendly Interface
                   </h5>
                   <p className="text-sm text-gray-600">
-                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                    nostrum.
+                    Intuitive and easy to navigate platform and simple input
+                    form for relevant details
                   </p>
                 </div>
                 <a
@@ -90,11 +90,11 @@ const Index = () => {
 
                 <div className="space-y-2">
                   <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    Second feature
+                    AI-Powered Document Generation
                   </h5>
                   <p className="text-sm text-gray-600">
-                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                    nostrum.
+                    Automatically creates legal documents and uses plain
+                    language for easy understanding
                   </p>
                 </div>
                 <a
@@ -120,11 +120,11 @@ const Index = () => {
 
                 <div className="space-y-2">
                   <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    Third feature
+                    Customization Capabilities
                   </h5>
                   <p className="text-sm text-gray-600">
-                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                    nostrum.
+                    Tailor documents for personal needs and ensures documents
+                    are personalized
                   </p>
                 </div>
                 <a
@@ -150,11 +150,11 @@ const Index = () => {
 
                 <div className="space-y-2">
                   <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    More features
+                    Integration with Legal Resources
                   </h5>
                   <p className="text-sm text-gray-600">
-                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                    nostrum.
+                    Access to trusted legal databases and ensures accuracy and
+                    completeness
                   </p>
                 </div>
                 <a

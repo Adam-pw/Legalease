@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FormGeneration from "@/components/FormGeneration";
 
 export type Message = {
   type: "apiMessage" | "userMessage";
@@ -34,7 +35,7 @@ export default function BusinessLaw() {
   }>({
     messages: [
       {
-        message: `Hey !! I can provide any information regarding your case feel free to ask me`,
+        message: `Hey !! feel free to ask me anything`,
         type: "apiMessage",
       },
     ],
@@ -88,14 +89,14 @@ export default function BusinessLaw() {
           history,
           nameSpace: "businessLaw",
           temperature: 0.4,
-          basePrompt: `Always answer in english`,
+          basePrompt: `Your name is legalEase, you are a legal expert on business laws. The user seeks legal advice from you. The name of the user is ${data.name}, the age is ${data.age} and e-mail address is ${data.email}. The user might have a criminal record that is ${data.criminalHistory} so keep that in consideration. The user has provided you with a short description or summary is the situation, which is ${data.summary}. The user’s problem is ${data.description}. It mentions how the problem started; it also mentions how it is affecting the life of the user. Understand the situation of the user in a humane way. The user might have taken some steps to remedy the problem, take those steps into consideration too.`,
         }),
       });
-      const data = await response.json();
-      console.log("data", data);
+      const responseData = await response.json();
+      console.log("data", responseData);
 
-      if (data.error) {
-        setError(data.error);
+      if (responseData.error) {
+        setError(responseData.error);
       } else {
         setMessageState((state: any) => ({
           ...state,
@@ -103,11 +104,11 @@ export default function BusinessLaw() {
             ...state.messages,
             {
               type: "apiMessage",
-              message: data.text,
-              sourceDocs: data.sourceDocuments,
+              message: responseData.text,
+              sourceDocs: responseData.sourceDocuments,
             },
           ],
-          history: [...state.history, [question, data.text]],
+          history: [...state.history, [question, responseData.text]],
         }));
       }
       console.log("messageState", messageState);
@@ -132,11 +133,26 @@ export default function BusinessLaw() {
     }
   };
 
+  const getLocalStorageItem = (key: any) => {
+    if (typeof window !== "undefined") {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    }
+    return null;
+  };
+
+  const [data, setData] = useState<any>();
+
+  useEffect(() => {
+    const response = getLocalStorageItem("input");
+    setData(response);
+  }, []);
+
   return (
     <Layout>
       <div className="mx-auto flex flex-col gap-4">
-        <h1 className="text-2xl font-bold leading-[1.1] text-center tracking-wide mt-6">
-          <span className="text-[#280036]">Chat With </span>
+        <h1 className="text-2xl font-bold flex flex-col md:flex-row items-center justify-center w-full gap-2 md:gap-0 leading-[1.1] tracking-wide mt-6">
+          <span className="text-[#280036] text-center">Chat With </span>
           <span className="text-[#ff0041]">{`${appName}`}</span>
         </h1>
         <main className={`${styles.main}` + " mt-2"}>
@@ -267,6 +283,7 @@ export default function BusinessLaw() {
           )}
         </main>
       </div>
+      <FormGeneration data={data} />
     </Layout>
   );
 }

@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FormGeneration from "@/components/FormGeneration";
 
 export type Message = {
   type: "apiMessage" | "userMessage";
@@ -282,6 +283,7 @@ export default function IncomeTax() {
           )}
         </main>
       </div>
+      <FormGeneration data={data} />
     </Layout>
   );
 }
