@@ -9,6 +9,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 
 ## About the project
+Meet your virtual legal advisor, the chatbot! When faced with the need to take legal action against someone, the initial step is often seeking advice from your close relatives or friends. However, it's essential to bear in mind that they might not possess a comprehensive understanding of legal procedures. This is where our chatbot comes to your rescue. Our chatbot is designed to analyze your specific legal problem and provide you with informed suggestions for potential courses of action, all in accordance with the principles and provisions of the Indian Constitution. Whether you're grappling with a contractual dispute, a personal injury case, or any other legal concern, our chatbot is here to help you navigate the complexities of the Indian legal system and make informed decisions about the next steps to take.
+
 
 ## Features
 
@@ -56,7 +58,7 @@ Submit a pull request with a clear description of your changes.
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 ## DNS
-Used godaddy.com for domain name 
+Used godaddy.com for domain name (https://www.kanoonkehathlambe.co/)
 
 ## Technologies used 
 LLM(Large Language Model)
@@ -68,6 +70,11 @@ Next js
 ## API used
 OpenAI
 Llama
+
+## Tracks we are participating in 
+Best use of TinyMCE
+Best Domain Name from GoDaddy
+
 
 
 
