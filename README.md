@@ -61,11 +61,25 @@ npm install
 npm run dev
 
 ## Usage
-Start a conversation with the chat bot by typing your legal query in the chat interface.
+1. Contractual Disputes: "I have a dispute with my landlord over a lease agreement. What are my rights in this situation?"
 
-The chat bot will respond with advice and may provide links to trusted sources of legal information.
+2. Employment Law: "My employer hasn't paid me for overtime work. What legal steps can I take to address this issue?"2
 
-Explore different legal topics and scenarios to leverage the chat bot's expertise.
+3. Criminal Law: "I received a traffic ticket. What should I do to contest it or pay the fine?"
+
+4. Property and Real Estate: "I'm planning to buy a house. Can you explain the legal steps involved in a real estate transaction?"
+
+5. Wills and Estates: "How can I create a legally valid will to ensure my assets are distributed as per my wishes?"
+
+6. Business and Corporate Law: "What are the legal requirements for starting a small business in my state?"
+
+7. Personal Injury: "I was in a car accident and sustained injuries. What should I do to seek compensation?"
+
+8. Consumer Rights: "I received a faulty product and the company won't refund me. What are my consumer rights in this situation?"
+
+9. Intellectual Property: "I have an idea for a new invention. How can I protect my intellectual property?"
+
+10. Can be used by busy lawers 
 
 ## Contributing 
 
