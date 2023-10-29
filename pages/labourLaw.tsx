@@ -237,16 +237,6 @@ export default function IncomeTax() {
           <div className={styles.center}>
             <div className={styles.cloudform}>
               <form onSubmit={handleSubmit} className="flex">
-                {/* <Editor
-                  apiKey="fh5cc648hfjct1ywqu671g53k2qwl09jbczln4x9zxw0ibit"
-                  init={{
-                    selector: 'textarea',  // change this value according to your HTML
-                    plugins: 'a_tinymce_plugin',
-                    a_plugin_option: true,
-                    a_configuration_option: 400
-                  }};
-                  onChange={(e) => setQuery(e.target.value)}
-                /> */}
                 <textarea
                   disabled={loading}
                   onKeyDown={handleEnter}
