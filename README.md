@@ -1,8 +1,6 @@
 <p align="center">
-  ![LOGO](https://github.com/Adam-pw/Legalease/assets/99668426/2d85fd0f-7064-45f9-a9d7-51b0c494fb02)
-
+  <img src= "https://github.com/Adam-pw/Legalease/assets/99668426/4b0b7062-5671-4d67-978c-73a2a379523d" />
 </p>
-
 
 This is a [Next.js](https://nextjs.o![Uploading [removal.ai]_c2b2b211-f17e-4e86-975a-df0976086508-logo.png…]()
 rg/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
