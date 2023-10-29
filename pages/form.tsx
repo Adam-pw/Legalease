@@ -230,9 +230,7 @@ export default function Form() {
                       criminalHistory: input.criminalHistory,
                       description:
                         editorRefDescription &&
-                        JSON.stringify(
-                          editorRefDescription.current.getContent()
-                        ),
+                        editorRefDescription.current.getContent().toString(),
                     });
                   }}
                 >
