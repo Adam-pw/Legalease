@@ -38,13 +38,13 @@ const Index = () => {
       </div>
       <div className="pt-16 bg-gray-50 overflow-hidden">
         <div className="container m-auto px-6 text-gray-500 md:px-12">
-          <div>
-            <span className="text-gray-600 text-lg font-semibold">
+          <div className="w-full text-center">
+            <span className="text-gray-600 text-2xl md:text-4xl text-center font-semibold">
               Main features
             </span>
             <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
-              A technology-first approach to Laws{" "}
-              <br className="lg:block" hidden /> and finance
+              A technology-first approach to laws and justice.{" "}
+              <br className="lg:block" hidden />
             </h2>
           </div>
           <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
@@ -73,7 +73,7 @@ const Index = () => {
                 >
                   <span className="text-sm">Read more</span>
                   <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    &RightArrow;
+                    {"LegalEase"}
                   </span>
                 </a>
               </div>
@@ -103,7 +103,7 @@ const Index = () => {
                 >
                   <span className="text-sm">Read more</span>
                   <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    &RightArrow;
+                    {"LegalEase"}
                   </span>
                 </a>
               </div>
@@ -133,7 +133,7 @@ const Index = () => {
                 >
                   <span className="text-sm">Read more</span>
                   <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    &RightArrow;
+                    {"LegalEase"}
                   </span>
                 </a>
               </div>
@@ -163,7 +163,7 @@ const Index = () => {
                 >
                   <span className="text-sm">Read more</span>
                   <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    &RightArrow;
+                    {"LegalEase"}
                   </span>
                 </a>
               </div>
@@ -213,7 +213,7 @@ const Index = () => {
 
                 <div className="flex flex-col items-start mt-5 space-y-2">
                   <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                    Retail & E-Commerce
+                    Justice and laws
                   </p>
                   <p className="text-gray-600 transition-colors duration-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
                     Information Technology
