@@ -68,7 +68,7 @@ const Index = () => {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href=""
                   className="flex justify-between items-center group-hover:text-yellow-600"
                 >
                   <span className="text-sm">Read more</span>
@@ -98,7 +98,7 @@ const Index = () => {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href=""
                   className="flex justify-between items-center group-hover:text-yellow-600"
                 >
                   <span className="text-sm">Read more</span>
@@ -128,7 +128,7 @@ const Index = () => {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href=""
                   className="flex justify-between items-center group-hover:text-yellow-600"
                 >
                   <span className="text-sm">Read more</span>
@@ -158,7 +158,7 @@ const Index = () => {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href=""
                   className="flex justify-between items-center group-hover:text-yellow-600"
                 >
                   <span className="text-sm">Read more</span>
