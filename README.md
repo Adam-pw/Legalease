@@ -1,3 +1,7 @@
+<p align="center">
+  ![LOGO](https://github.com/Adam-pw/Legalease/assets/99668426/2d85fd0f-7064-45f9-a9d7-51b0c494fb02)
+
+</p>
 
 
 This is a [Next.js](https://nextjs.o![Uploading [removal.ai]_c2b2b211-f17e-4e86-975a-df0976086508-logo.png…]()
