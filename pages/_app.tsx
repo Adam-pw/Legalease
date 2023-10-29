@@ -8,6 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="manifest" href="/manifest.webmanifest" />
+        <title>LegalEase</title>
+        <link rel="icon" href="/favicon_io/favicon.ico" />
       </Head>
       <ChakraProvider>
         <Component {...pageProps} />
